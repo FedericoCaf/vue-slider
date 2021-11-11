@@ -3,16 +3,27 @@ const app = new Vue({
   el: '#app',
   data:{
     images: ['img/01.jpg','img/02.jpg','img/03.jpg','img/04.jpg','img/05.jpg'],
-    // il contatore mi serve per "navigare" lungo l'array delle immagini
+    titles: ['Svezia','Svizzera','Gran Bretagna','Germania', 'Paradise'],
+    texts: [
+      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum corporis.',
+      'Lorem ipsum',
+      'Lorem ipsum, dolor sit amet consectetur adipisicing elit.',
+      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
+      'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,'
+    ],
+
     counter: 0
+
   },
-  // mounted(){
-  //   // in questo punto possiamo lanciare delle azioni che vogliamo al nostro caricamento dell'app
-  //   console.log('APP MONTATA');
-  //   setInterval(() => {
-  //     this.nextSlide();
-  //   }, 3000)
-  // },
+
+  mounted(){
+
+    setInterval(() => {
+      this.nextSlide();
+    }, 3000)
+  },
+
+ 
 
    methods:{
 
@@ -28,9 +39,9 @@ const app = new Vue({
       if(this.counter < 0){
         this.counter = this.images.length - 1;
       }
-    }
+    },
 
+  
   }
-
 
 });

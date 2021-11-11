@@ -19,25 +19,20 @@
 
       <div class="box-left">     
          <img :src="images[counter]" alt="">
-          <div class="text-area"> </div>        
+          <div class="text-area"> 
+            <div class="title-item">
+              <h4>{{titles[counter]}}</h4>
+            </div>
+            <div class="news-item">
+              <p>{{texts[counter]}}</p>
+            </div>
+          </div>        
       </div>
 
       <div class="box-right">
 
-         <div class="item-mini active">
-           <img :src="images[0]" alt="">    
-        </div>
-         <div class="item-mini">
-           <img :src="images[1]" alt="">    
-        </div>
-         <div class="item-mini">
-           <img :src="images[2]" alt="">    
-        </div>
-         <div class="item-mini">
-           <img :src="images[3]" alt="">    
-        </div>
-         <div class="item-mini">
-           <img :src="images[4]" alt="">    
+         <div v-for= "image in images" class="item-mini" :class="{active:(images[counter] === image)}"alt="">
+           <img :src="image" >    
         </div>
 
         <div @click="prevSlide" class="fc-prev"> &#11165; </div>
