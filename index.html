@@ -17,7 +17,10 @@
   <div class="fc-container d-flex justify-content-center align-items-center">
     <div class="fc-container-box d-flex">
 
-      <div class="box-left">     
+      <div
+      @mouseover="stopAutoScroll"
+      @mouseleave="autoScroll"
+      class="box-left">     
          <img :src="images[counter]" alt="">
           <div class="text-area"> 
             <div class="title-item">
@@ -31,7 +34,10 @@
 
       <div class="box-right">
 
-         <div v-for= "image in images" class="item-mini" :class="{active:(images[counter] === image)}"alt="">
+         <div v-for= "(image, index) in images"
+          @click="counter = index"
+          class="item-mini" :class="{'active':index === counter}"alt="">
+          
            <img :src="image" >    
         </div>
 

@@ -12,18 +12,16 @@ const app = new Vue({
       'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,'
     ],
 
-    counter: 0
+    counter: 0,
+    clock: null
 
   },
 
-  mounted(){
+  mounted(){ 
 
-    setInterval(() => {
-      this.nextSlide();
-    }, 3000)
+    this.autoScroll();
+  
   },
-
- 
 
    methods:{
 
@@ -41,7 +39,16 @@ const app = new Vue({
       }
     },
 
-  
+    autoScroll(){
+      this.clock = setInterval(() => {
+        this.nextSlide();
+      }, 1000)
+    },
+
+    stopAutoScroll(){
+      clearInterval(this.clock)
+    }
+
   }
 
 });

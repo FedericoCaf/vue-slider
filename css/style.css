@@ -80,6 +80,7 @@
 .item-mini{
   height: 100px;
   width: 100%;
+  cursor: pointer;
   /* filter: brightness(50%); */
   /* filter: brightness(100%); */
 }
@@ -87,6 +88,7 @@
 .active{
   border: 2px solid white;
   filter: brightness(200%);
+ 
 }
 
 .fc-prev, .fc-next{
